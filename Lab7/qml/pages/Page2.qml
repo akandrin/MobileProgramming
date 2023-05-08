@@ -4,9 +4,6 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
-    // 1. Создать приложение, отображающее светофор.
-    // На экране должно присутствовать 3 разноцветных сигнала, которые загораются и гаснут в том же порядке, что и сигналы светофора.
-    // Сделать автоматическую смену состояний.
     Column {
         id: column
 
@@ -181,4 +178,69 @@ Page {
         }
 
     }
+
+    // 2. Доработать задание 1 так, чтобы во время зеленого сигнала светофора
+    // из одного конца экрана в другой плавно двигалась иконка человечка.
+    Image
+    {
+        id: human
+        width: 300
+        height: 300
+        source: "qrc:///human-icon.png"
+        y: 850
+
+        states: [
+            State
+            {
+                name: "Stop"
+                when: !(column.state == "Start" || column.state == "WaitForStop")
+                PropertyChanges {
+                    target: human
+                    x: -200
+                }
+            },
+            State
+            {
+                name: "Start"
+                when: column.state == "Start" || column.state == "WaitForStop"
+                PropertyChanges
+                {
+                    target: human
+                    x: page.width
+                }
+            }
+        ]
+        transitions: [
+            Transition
+            {
+                to: "Start"
+                NumberAnimation {
+                    property: "x"
+                    duration: 6500
+                }
+            }
+
+        ]
+
+    }
 }
+
+
+/*import QtQuick 2.0
+import Sailfish.Silica 1.0
+
+Page {
+    id: page
+
+    Column
+    {
+        width: parent.width
+
+        Image
+        {
+            width: 300
+            height: 300
+            source: "qrc:///human-icon.png"
+        }
+    }
+}*/

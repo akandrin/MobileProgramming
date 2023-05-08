@@ -4,7 +4,7 @@ import "pages"
 
 ApplicationWindow
 {
-    initialPage: Component { Page1 { } }
+    initialPage: Component { Page3 { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 }

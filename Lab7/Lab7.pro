@@ -19,7 +19,8 @@ SOURCES += src/Lab7.cpp
 DISTFILES += qml/Lab7.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Page1.qml \
-    qml/pages/SecondPage.qml \
+    qml/pages/Page2.qml \
+    qml/pages/Page3.qml \
     rpm/Lab7.changes.in \
     rpm/Lab7.changes.run.in \
     rpm/Lab7.spec \
@@ -38,3 +39,5 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/Lab7-de.ts
+
+RESOURCES += resources/lab7.qrc
