@@ -22,16 +22,12 @@ Page {
             state: "StartState"
 
             property var startTime
+            property int currentY
 
             states: [
                 State
                 {
                     name: "Pressed"
-                    StateChangeScript
-                    {
-                        name: "OnPressed"
-                        script: label.startTime = new Date().getTime()
-                    }
 
                     PropertyChanges
                     {
@@ -42,15 +38,9 @@ Page {
                 State
                 {
                     name: "Released"
-                    StateChangeScript
-                    {
-                        name: "OnReleased"
-                        script: {
-                            console.log("Here");
-                            if(label.startTime !== undefined)
-                                returnAnimation.returnTime = new Date().getTime() - label.startTime;
-                            console.log("Return time = " + returnAnimation.returnTime);
-                        }
+                    PropertyChanges {
+                        target: label
+                        y: label.currentY
                     }
                 },
                 State
@@ -70,6 +60,10 @@ Page {
                 interval: 0
                 repeat: false
                 onTriggered: {
+                    console.log("Here");
+                    if(label.startTime !== undefined)
+                        returnAnimation.returnTime = new Date().getTime() - label.startTime;
+                    console.log("Return time = " + returnAnimation.returnTime);
                     console.log("Change state to start")
                     label.state = "StartState"
                 }
@@ -83,13 +77,19 @@ Page {
                     {
                         ScriptAction
                         {
-                            scriptName: "OnPressed"
+                            script: label.startTime = new Date().getTime()
                         }
 
                         NumberAnimation
                         {
                             properties: "y"
                             duration: 5000
+                        }
+                    }
+                    onRunningChanged: {
+                        if (!running)
+                        {
+                            label.currentY = label.y
                         }
                     }
                 },
@@ -99,11 +99,6 @@ Page {
                     {
                         ScriptAction
                         {
-                            scriptName: "OnReleased"
-                        }
-
-                        ScriptAction
-                        {
                             script: timer.start()
                         }
                     }
@@ -111,20 +106,12 @@ Page {
                 Transition
                 {
                     to: "StartState"
-                    SequentialAnimation
+                    NumberAnimation
                     {
-                        ScriptAction
-                        {
-                            script: console.log(returnAnimation.returnTime)
-                        }
-
-                        NumberAnimation
-                        {
-                            id: returnAnimation
-                            property int returnTime
-                            properties: "y"
-                            duration: 3000
-                        }
+                        id: returnAnimation
+                        property int returnTime
+                        properties: "y"
+                        duration: returnTime
                     }
                 }
 
