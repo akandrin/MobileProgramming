@@ -22,7 +22,9 @@ Page {
             state: "StartState"
 
             property var startTime
-            property int currentY
+            property var currentY
+            property var currentRotation
+            property var currentColor
 
             states: [
                 State
@@ -33,6 +35,8 @@ Page {
                     {
                         target: label
                         y: 900
+                        rotation: 180
+                        color: "blue"
                     }
                 },
                 State
@@ -41,6 +45,8 @@ Page {
                     PropertyChanges {
                         target: label
                         y: label.currentY
+                        rotation: label.currentRotation
+                        color: label.currentColor
                     }
                 },
                 State
@@ -49,6 +55,8 @@ Page {
                     PropertyChanges {
                         target: label
                         y: 0
+                        rotation: 0
+                        color: "red"
                     }
                 }
 
@@ -82,14 +90,19 @@ Page {
 
                         NumberAnimation
                         {
-                            properties: "y"
+                            properties: "y,rotation"
                             duration: 5000
                         }
+                    }
+                    ColorAnimation {
+                        duration: 5000
                     }
                     onRunningChanged: {
                         if (!running)
                         {
                             label.currentY = label.y
+                            label.currentRotation = label.rotation
+                            label.currentColor = label.color
                         }
                     }
                 },
@@ -105,13 +118,16 @@ Page {
                 },
                 Transition
                 {
+                    id: returnAnimation
+                    property int returnTime
                     to: "StartState"
                     NumberAnimation
                     {
-                        id: returnAnimation
-                        property int returnTime
-                        properties: "y"
-                        duration: returnTime
+                        properties: "y,rotation"
+                        duration: returnAnimation.returnTime
+                    }
+                    ColorAnimation {
+                        duration: returnAnimation.returnTime
                     }
                 }
 
