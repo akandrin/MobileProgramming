@@ -8,4 +8,31 @@
         <translation>Mein Cover</translation>
     </message>
 </context>
+<context>
+    <name>StartPage</name>
+    <message>
+        <source>Перейти на страницу 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Перейти на страницу 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Перейти на страницу 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Перейти на страницу 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Перейти на страницу 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Перейти на страницу 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

@@ -18,9 +18,16 @@ SOURCES += src/Lab7.cpp
 
 DISTFILES += qml/Lab7.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/Clock.qml \
+    qml/pages/Item5.qml \
     qml/pages/Page1.qml \
     qml/pages/Page2.qml \
     qml/pages/Page3.qml \
+    qml/pages/Page4.qml \
+    qml/pages/Page5.qml \
+    qml/pages/Page6.qml \
+    qml/pages/StartPage.qml \
+    qml/pages/TrafficLight.qml \
     rpm/Lab7.changes.in \
     rpm/Lab7.changes.run.in \
     rpm/Lab7.spec \
