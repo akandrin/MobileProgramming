@@ -22,6 +22,7 @@ DISTFILES += qml/Lab8.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Page1.qml \
     qml/pages/Page2.qml \
+    qml/pages/StartPage.qml \
     rpm/Lab8.changes.in \
     rpm/Lab8.changes.run.in \
     rpm/Lab8.spec \

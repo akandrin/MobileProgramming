@@ -17,12 +17,18 @@ int main(int argc, char *argv[])
     int value = -1;
     assert(QMetaObject::invokeMethod(object, "get", Q_RETURN_ARG(int, value)));
     qDebug() << "Init value = " << value;
+
     assert(QMetaObject::invokeMethod(object, "increment"));
     assert(QMetaObject::invokeMethod(object, "get", Q_RETURN_ARG(int, value)));
     qDebug() << "Value after increment = " << value;
+
     assert(QMetaObject::invokeMethod(object, "reset"));
     assert(QMetaObject::invokeMethod(object, "get", Q_RETURN_ARG(int, value)));
     qDebug() << "Value after reset = " << value;
+
+    assert(QMetaObject::invokeMethod(object, "set", Q_ARG(int, 777)));
+    assert(QMetaObject::invokeMethod(object, "get", Q_RETURN_ARG(int, value)));
+    qDebug() << "Value after set = " << value;
 
 
     qmlRegisterType<Counter>("harbour.Lab8.Counter", 0, 1, "Counter");

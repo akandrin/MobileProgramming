@@ -9,14 +9,18 @@ int Counter::get() const
     return value;
 }
 
+void Counter::set(int value)
+{
+    this->value = value;
+    emit valueChanged();
+}
+
 void Counter::reset()
 {
-    value = 0;
-    emit valueChanged();
+    set(0);
 }
 
 void Counter::increment()
 {
-    ++value;
-    emit valueChanged();
+    set(value + 1);
 }
