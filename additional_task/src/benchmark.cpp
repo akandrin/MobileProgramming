@@ -1,7 +1,6 @@
 #include "benchmark.h"
 #include <fstream>
 #include <cassert>
-#include <QDebug>
 
 Benchmark::Benchmark(QObject *parent) : QObject(parent)
 {
@@ -100,8 +99,6 @@ Benchmark::PowerInfo Benchmark::readPowerInfo() const
 
     PowerInfo result;
     powerInfo >> result.capacity;
-
-    qDebug() << result.capacity;
 
     return result;
 }

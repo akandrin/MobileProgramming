@@ -15,15 +15,12 @@ TARGET = Lab8
 CONFIG += sailfishapp
 
 SOURCES += src/Lab8.cpp \
-    src/benchmark.cpp \
-    src/mystringlist.cpp
+    src/benchmark.cpp
 
 DISTFILES += qml/Lab8.qml \
     qml/pages/CircleDiagram.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Page1.qml \
-    qml/pages/Page2.qml \
-    qml/pages/StartPage.qml \
     rpm/Lab8.changes.in \
     rpm/Lab8.changes.run.in \
     rpm/Lab8.spec \
@@ -44,5 +41,4 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/Lab8-de.ts
 
 HEADERS += \
-    src/benchmark.h \
-    src/mystringlist.h
+    src/benchmark.h

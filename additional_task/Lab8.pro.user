@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.1, 2023-05-28T22:35:14. -->
+<!-- Written by QtCreator 4.9.1, 2023-05-29T23:25:32. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -427,7 +427,7 @@
      <value type="int">13</value>
      <value type="int">14</value>
     </valuelist>
-    <value type="QString" key="MerRunConfiguration.QmlLiveBenchWorkspace">D:/github/Aurora/Lab8</value>
+    <value type="QString" key="MerRunConfiguration.QmlLiveBenchWorkspace">D:/github/Aurora/additional_task</value>
     <value type="bool" key="MerRunConfiguration.QmlLiveEnabled">false</value>
     <value type="int" key="MerRunConfiguration.QmlLiveIpcPort">-1</value>
     <value type="int" key="MerRunConfiguration.QmlLiveOptions">3</value>
@@ -435,8 +435,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Lab8 (на Aurora Emulator 3.2.3.31-cert)</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:D:/github/Aurora/Lab8/Lab8.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Lab8 (на Aurora Emulator 3.2.3.31-cert)2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:D:/github/Aurora/additional_task/Lab8.pro</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="QString" key="RemoteLinux.RunConfig.AlternateRemoteExecutable"></value>
     <value type="bool" key="RemoteLinux.RunConfig.UseAlternateRemoteExecutable">false</value>
